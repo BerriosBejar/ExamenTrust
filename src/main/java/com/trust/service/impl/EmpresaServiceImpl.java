@@ -13,8 +13,8 @@ import com.trust.service.EmpresaService;
 public class EmpresaServiceImpl implements EmpresaService{
     @Autowired
     private EmpresaRepository empresaRepository;
-    public void save(Empresa empresa){
-        empresaRepository.save(empresa);
+    public Empresa save(Empresa empresa){
+      return  empresaRepository.save(empresa);
     }   
    
     public List<Empresa> findLast3Registers(){

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRAR</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">SISOL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/empresas/ultimos-registros}">Registros <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item disabled">
+                <a class="nav-link" href="#">Registrar</a>
+            </li>
+    </div>
+</nav>
+<div class="container d-flex justify-content-center mt-5 rounded-sm">
+    <div class="bg-success text-white p-5">
+        <form th:action="@{/empresas/registro/save}" method="post" th:object="${empresa}">
+            <div class="form-group">
+                <label for="ruc">RUC:</label>
+                <input type="text" class="form-control" id="ruc" th:field="*{ruc}">
+            </div>
+            <div class="form-group">
+                <label for="razonSocial">RAZON SOCIAL:</label>
+                <input type="text" class="form-control" id="razonSocial" th:field="*{razonSocial}">
+            </div>
+            <div class="form-group">
+                <label for="direccion">DIRECCION:</label>
+                <input type="text" class="form-control" id="direccion" th:field="*{direccion}">
+            </div>
+            <div class="form-group">
+                <label for="estado">ESTADO:</label>
+                <input type="text" class="form-control" id="estado" th:field="*{estado}">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

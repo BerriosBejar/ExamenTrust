@@ -9,5 +9,5 @@ public class TrustApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TrustApplication.class, args);
 	}
-
+	
 }

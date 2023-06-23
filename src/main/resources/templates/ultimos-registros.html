@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ULTIMOS REGISTROS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">SISOL</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" th:href="@{/empresas/registro}">Registrar <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Registros</a>
+            </li>
+    </div>
+</nav>
+<div class="container d-flex justify-content-center mt-5 rounded-sm">
+    <h1>ULTIMOS REGISTROS</h1>
+</div>
+<div class="container d-flex justify-content-center">
+    <div class="bg-dark text-white p-12">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>RUC</th>
+                <th>RAZON SOCIAL</th>
+                <th>DIRECCION</th>
+                <th>ESTADO</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="empresa : ${lista}">
+                <td th:text="${empresa.idEmpresa}"></td>
+                <td th:text="${empresa.ruc}"></td>
+                <td th:text="${empresa.razonSocial}"></td>
+                <td th:text="${empresa.direccion}"></td>
+                <td th:text="${empresa.estado}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
